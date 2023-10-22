@@ -1,17 +1,50 @@
-<h2>Rectangle Creator</h2>
-<p>Count: <input id="count" value="5"></p>
-<button id="create">Create</button>
-<button id="cancel">Cancel</button>
-<script>
+<!-- Standard link tag-->
+<!-- <link rel="stylesheet" href="./node_modules/figma-plugin-ds/dist/figma-plugin-ds.css"> -->
+<!-- <link rel="stylesheet" href="../../node_modules/figma-plugin-ds/dist/figma-plugin-ds.css"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/thomas-lowry/figma-plugin-ds/dist/figma-plugin-ds.css">
 
-document.getElementById('create').onclick = () => {
-  const textbox = document.getElementById('count');
-  const count = parseInt(textbox.value, 10);
-  parent.postMessage({ pluginMessage: { type: 'create-rectangles', count } }, '*')
-}
+<style>
+  body {
+    padding: 2em;
+  }
+  div {
+    margin: 1em;
+  }
+  input {
+    display: block;
+  }
+</style>
+<h1>hello world</h1>
+<div>
+  <label for="username">Username</label>
+  <input class="input__field" type="text" value="Your Petma username" id="username">
 
-document.getElementById('cancel').onclick = () => {
-  parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
-}
+  <label for="name">Name</label>
+  <input class="input__field" type="text" value="Your Petma display name" id="name">
 
-</script>
+  <label for="description">Description</label>
+  <input class="input__field" type="textarea" value="Your post goes here" id="description">
+</div>
+
+<!-- Switch -->
+<div class="switch">
+  <input class="switch__toggle" type="checkbox" id="dark-mode-on">
+  <label class="switch__label" for="dark-mode-on">Dark Mode</label>
+</div>
+
+<!-- Radio button -->
+<div class="radio">
+  <input id="radioButton1"type="radio" class="radio__button" name="variantGroup" >
+  <label for="radioButton1" class="radio__label">No Image</label>
+
+  <input id="radioButton2"type="radio" class="radio__button" name="variantGroup" >
+  <label for="radioButton2" class="radio__label">Single Image</label>
+
+  <input id="radioButton3"type="radio" class="radio__button" name="variantGroup" >
+  <label for="radioButton3" class="radio__label">Carousel</label>
+</div>
+
+<!-- Submit button -->
+<div>
+  <button class="button button--primary" id="submit-post">Submit</button>
+</div>
